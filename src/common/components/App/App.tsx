@@ -1,12 +1,17 @@
 import 'common/components/App/App.css'
+import {AppTitle} from "common/components/App/AppTitle.tsx";
+import {Rating} from "common/components/Rating/Rating.tsx";
+import {Accordion} from "common/components/Accordion/Accordion.tsx";
 
 function App() {
 
-  return (
-      <>
-        <div>This is APP component</div>
-      </>
-  )
+    return (
+        <>
+            <AppTitle/>
+            <Accordion/>
+            <Rating/>
+        </>
+    )
 }
 
 export default App
