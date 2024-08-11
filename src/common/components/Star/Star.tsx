@@ -1,4 +1,6 @@
-export const Star = (props: any) => {
+import {StarProps} from "common/types/Star/StarProps.ts";
+
+export const Star = (props: StarProps) => {
     console.log("Star rendering")
 
     return (
