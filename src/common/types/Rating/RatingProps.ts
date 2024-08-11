@@ -1,3 +1,6 @@
+import {RatingValueProps} from "common/types/Rating/RatingValueProps.ts";
+
 export type RatingProps = {
-    value: 0 | 1 | 2 | 3 | 4 | 5
+    value: RatingValueProps
+    onClick?: (value: RatingValueProps) => void
 }
