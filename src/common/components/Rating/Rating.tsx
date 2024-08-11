@@ -5,11 +5,11 @@ export const Rating = () => {
 
     return (
         <div>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
+            <Star selected={true}/>
+            <Star selected={true}/>
+            <Star selected={true}/>
+            <Star selected={true}/>
+            <Star selected={true}/>
         </div>
     );
 };
