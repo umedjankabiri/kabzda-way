@@ -1,11 +1,13 @@
+import {Star} from "common/components/Star/Star.tsx";
+
 export const Rating = () => {
     return (
         <div>
-            <div>start</div>
-            <div>start</div>
-            <div>start</div>
-            <div>start</div>
-            <div>start</div>
+            <Star/>
+            <Star/>
+            <Star/>
+            <Star/>
+            <Star/>
         </div>
     );
 };
