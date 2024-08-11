@@ -6,9 +6,9 @@ export const Accordion = (props: AccordionProps) => {
     console.log("Accordion rendering")
 
     return (
-        <div>
+        <>
             <AccordionTitle title = {props.title}/>
-            <AccordionBody/>
-        </div>
+            { !props.collapsed && <AccordionBody/>}
+        </>
     );
 };
