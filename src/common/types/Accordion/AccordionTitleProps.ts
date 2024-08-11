@@ -1,4 +1,5 @@
 export type AccordionTitleProps =  {
     title: string
-    onClick?: () => void
+    collapsed: boolean
+    onClick?: (collapsed: boolean) => void
 }
