@@ -1,0 +1,23 @@
+.mainWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.on, .off {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+}
+
+.circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+}
