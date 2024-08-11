@@ -7,8 +7,8 @@ export const Accordion = (props: AccordionProps) => {
 
     return (
         <>
-            <AccordionTitle title = {props.title}/>
-            { !props.collapsed && <AccordionBody/>}
+            <AccordionTitle title={props.title} collapsed={!props.collapsed} onClick={props.onClick}/>
+            {!props.collapsed && <AccordionBody/>}
         </>
     );
 };
