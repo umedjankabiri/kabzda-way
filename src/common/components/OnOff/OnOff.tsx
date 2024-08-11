@@ -12,13 +12,14 @@ export const OnOff = (props: OnOffProps) => {
                  onClick={onClickOnHandler}
             >
                 ON
-                <div className={s.off}
-                     style={!props.toggle ? {backgroundColor: "red"} : {backgroundColor: "white"}}
-                     onClick={onClickOffHandler}
-                >
-                    OFF
-                </div>
             </div>
+            <div className={s.off}
+                 style={!props.toggle ? {backgroundColor: "red"} : {backgroundColor: "white"}}
+                 onClick={onClickOffHandler}
+            >
+                OFF
+            </div>
+
             <div className={s.circle} style={props.toggle ? {backgroundColor: "green"} : {backgroundColor: "red"}}>
 
             </div>
