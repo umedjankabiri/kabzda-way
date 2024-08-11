@@ -4,6 +4,8 @@ import {Accordion} from "common/components/Accordion/Accordion.tsx";
 import {PageTitle} from "common/components/App/PageTitle.tsx";
 import {OnOff} from "common/components/OnOff/OnOff.tsx";
 import {UncontrolledAccordion} from "common/components/UncontrolledAccordion/UncontrolledAccordion.tsx";
+import {UncontrolledRating} from "common/components/UncontrolledRating/UncontrolledRating.tsx";
+import {UncontrolledOnOff} from "common/components/UncontrolledOnOff/UncontrolledOnOff.tsx";
 
 function App() {
     console.log("App rendering")
@@ -28,7 +30,8 @@ function App() {
 
             <h1>Uncontrolled components</h1>
             <UncontrolledAccordion title={"Menu"}/>
-
+            <UncontrolledRating/>
+            <UncontrolledOnOff/>
         </div>
     )
 }
