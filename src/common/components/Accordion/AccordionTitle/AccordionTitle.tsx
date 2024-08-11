@@ -1,4 +1,6 @@
-export const AccordionTitle = (props: any) => {
+import {AccordionTitleProps} from "common/types/Accordion/AccordionTitleProps.ts";
+
+export const AccordionTitle = (props: AccordionTitleProps) => {
     console.log("AccordionTitle rendering")
 
     return (
