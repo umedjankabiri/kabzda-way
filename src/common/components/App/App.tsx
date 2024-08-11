@@ -1,0 +1,12 @@
+import 'common/components/App/App.css'
+
+function App() {
+
+  return (
+      <>
+        <div>This is APP component</div>
+      </>
+  )
+}
+
+export default App
