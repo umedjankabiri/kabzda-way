@@ -1,6 +1,7 @@
 import {OnOff} from "common/components/OnOff/OnOff.tsx";
 import {Meta} from "@storybook/react";
 import {useState} from "react";
+import {action} from "@storybook/addon-actions";
 
 const meta: Meta<typeof OnOff> = {
     title: 'OnOff stories',
@@ -13,8 +14,9 @@ const meta: Meta<typeof OnOff> = {
 
 export default meta
 
-export const switchedOn = () => <OnOff toggle={true} onClick={()=> {}}/>
-export const switchedOff = () => <OnOff toggle={false} onClick={()=> {}}/>
+const onClickHandler = action("Clicked handler")
+export const switchedOn = () => <OnOff toggle={true} onClick={onClickHandler}/>
+export const switchedOff = () => <OnOff toggle={false} onClick={onClickHandler}/>
 export const DemonstrationOnOff = () => {
     const [on, setOn] = useState<boolean>(false);
 
