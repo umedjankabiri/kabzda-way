@@ -1,4 +1,4 @@
-import {Meta} from "@storybook/react";
+import {Meta, StoryObj} from "@storybook/react";
 import {Accordion} from "common/components/Accordion/Accordion.tsx";
 import {useState} from "react";
 
@@ -25,3 +25,14 @@ export const DemonstrationAccordion = () => {
         </>
     )
 }
+export const StoryAccordion: Story = {
+    args: {
+        title: 'Accordion',
+        collapsed: false,
+        onClick: () => {}
+    },
+    argTypes: {
+        onClick: {onClick: "Clicked"}
+    }
+}
+type Story = StoryObj<typeof Accordion>
