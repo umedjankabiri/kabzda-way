@@ -13,3 +13,4 @@ const meta: Meta<typeof OnOff> = {
 export default meta
 
 export const switchedOn = () => <OnOff toggle={true} onClick={()=> {}}/>
+export const switchedOff = () => <OnOff toggle={false} onClick={()=> {}}/>
