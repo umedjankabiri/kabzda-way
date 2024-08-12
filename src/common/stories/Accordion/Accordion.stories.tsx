@@ -4,7 +4,7 @@ import {useState} from "react";
 import {action} from "@storybook/addon-actions";
 
 const meta: Meta<typeof Accordion> = {
-    title: 'Accordion',
+    title: 'Accordion stories',
     component: Accordion,
     args: {
         title: 'Accordion',
