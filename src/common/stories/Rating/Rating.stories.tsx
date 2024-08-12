@@ -17,3 +17,4 @@ const onClickHandler = action("Clicked handler")
 export const EmptyRating = () => <Rating value={0} onClick={onClickHandler} />
 export const Rating1 = () => <Rating value={1} onClick={onClickHandler} />
 export const Rating2 = () => <Rating value={2} onClick={onClickHandler} />
+export const Rating3 = () => <Rating value={3} onClick={onClickHandler} />
