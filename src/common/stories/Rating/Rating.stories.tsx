@@ -11,3 +11,5 @@ const meta: Meta<typeof Rating> = {
 }
 
 export default meta
+
+export const EmptyRating = () => <Rating value={0} onClick={() => {}} />
