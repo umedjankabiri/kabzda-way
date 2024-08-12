@@ -14,3 +14,4 @@ const meta: Meta<typeof Accordion> = {
 export default meta;
 
 export const CollapsedAccordion = () => <Accordion title={"Collapsed Accordion"} collapsed={true} onClick={()=> {}} />
+export const OpenedAccordion = () => <Accordion title={"Opened Accordion"} collapsed={false} onClick={()=> {}}/>
