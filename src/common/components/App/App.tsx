@@ -16,14 +16,16 @@ function App() {
     const [accordionUsers, setAccordionUsers] = useState<boolean>(false)
     const [on, setOn] = useState<boolean>(false)
 
+    const items = [{title: "Umedjan", value: 1}, {title: "Leyla", value: 2}, {title: "Muhammad", value: 3}]
+
     return (
         <div className={"App"}>
             <h1>Controlled components</h1>
             <PageTitle title={'This is APP component'}/>
             <PageTitle title={'My friends'}/>
             <span>Article 1</span>
-            <Accordion title={'Menu'} collapsed={accordionMenu} onClick={setAccordionMenu}/>
-            <Accordion title={'Users'} collapsed={accordionUsers} onClick={setAccordionUsers}/>
+            <Accordion title={'Menu'} collapsed={accordionMenu} onClick={setAccordionMenu} items={items}/>
+            <Accordion title={'Users'} collapsed={accordionUsers} onClick={setAccordionUsers} items={items}/>
             <span>Article 2</span>
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <OnOff toggle={on} onClick={setOn}/>
