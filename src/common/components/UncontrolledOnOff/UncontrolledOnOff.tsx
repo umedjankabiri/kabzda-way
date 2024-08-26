@@ -1,8 +1,9 @@
-import {CSSProperties, useState} from "react";
+import {CSSProperties, FC, useState} from "react";
+import {UncontrolledOnOffProps} from "common/types/UncontrolledOnOff/UncontrolledOnOffProps.ts";
 
-export const UncontrolledOnOff = () => {
+export const UncontrolledOnOff: FC<UncontrolledOnOffProps> = (props) => {
     console.log("UncontrolledOnOff rendering")
-    const [on, setOn] = useState<boolean>(false)
+    const [on, setOn] = useState<boolean>(props.defaultValue ? props.defaultValue : false)
 
     const mainWrapper: CSSProperties = {
         display: "flex",
