@@ -1,7 +1,7 @@
 import {ChangeEvent, useState} from "react";
 
 export default {
-    title: "Input"
+    title: "Input stories"
 }
 
 export const ControlledInput = () => {
