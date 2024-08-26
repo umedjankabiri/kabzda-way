@@ -3,10 +3,9 @@ import {SelectProps} from "common/types/Select/SelectProps.ts";
 
 export const Select: FC<SelectProps> = (props) => {
 
-
     return (
         <select>
-
+            <option>{props.value}</option>
         </select>
     );
 };
