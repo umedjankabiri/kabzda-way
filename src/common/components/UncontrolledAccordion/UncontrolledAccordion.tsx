@@ -4,7 +4,7 @@ import {AccordionBody} from "common/components/Accordion/AccordionBody/Accordion
 import {UncontrolledAccordionProps} from "common/types/UncontrolledAccordion/UncontrolledAccordionProps.ts";
 
 export const UncontrolledAccordion = (props: UncontrolledAccordionProps) => {
-    console.log("Accordion rendering")
+    console.log("UncontrolledAccordion rendering")
     const [collapsed, setCollapsed] = useState(false);
 
     return (
