@@ -12,7 +12,7 @@ export const UncontrolledRating: FC<UncontrolledRatingProps> = (props) => {
             <UncontrolledStar selected={value > 0}
                               onClick={() => {
                                   setValue(1);
-                                  props.onClick(1)
+                                  props.onClick && props.onClick(1)
                               }
                               }
             />
@@ -20,7 +20,7 @@ export const UncontrolledRating: FC<UncontrolledRatingProps> = (props) => {
                               onClick={
                                   () => {
                                       setValue(2);
-                                      props.onClick(2)
+                                      props.onClick && props.onClick(2)
                                   }
                               }
             />
@@ -28,7 +28,7 @@ export const UncontrolledRating: FC<UncontrolledRatingProps> = (props) => {
                               onClick={
                                   () => {
                                       setValue(3);
-                                      props.onClick(3)
+                                      props.onClick && props.onClick(3)
                                   }
                               }
             />
@@ -36,7 +36,7 @@ export const UncontrolledRating: FC<UncontrolledRatingProps> = (props) => {
                               onClick={
                                   () => {
                                       setValue(4);
-                                      props.onClick(4)
+                                      props.onClick && props.onClick(4)
                                   }
                               }
             />
@@ -44,7 +44,7 @@ export const UncontrolledRating: FC<UncontrolledRatingProps> = (props) => {
                               onClick={
                                   () => {
                                       setValue(5);
-                                      props.onClick(5)
+                                      props.onClick && props.onClick(5)
                                   }
                               }
             />
