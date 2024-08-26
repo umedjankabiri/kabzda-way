@@ -10,8 +10,7 @@ const meta: Meta<typeof Accordion> = {
         title: 'Accordion',
         collapsed: false,
         items: [{title: "Umedjan", value: 1}, {title: "Leyla", value: 2}, {title: "Muhammad", value: 3}],
-        onClick: () => {
-        }
+        onClick: () => {}
     }
 }
 
