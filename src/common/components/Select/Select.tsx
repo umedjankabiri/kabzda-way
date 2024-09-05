@@ -33,6 +33,8 @@ export const Select: FC<SelectProps> = (props) => {
                 }
             }
         }
+        if (event.code === "Enter" || event.code === "Escape")
+            setIsActive(false)
     }
 
     const mappedItems = props.items.map(item =>
