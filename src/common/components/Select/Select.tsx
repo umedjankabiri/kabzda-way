@@ -1,11 +1,36 @@
-import {FC} from "react";
+import {FC, useState} from "react";
 import {SelectProps} from "common/types/Select/SelectProps.ts";
+import stl from "common/components/Select/select.module.css"
 
 export const Select: FC<SelectProps> = (props) => {
+    const [isActive, setIsActive] = useState<boolean>(false)
+
+    const selectedItem = props.items.find(item => item.value === props.value)
+    const toggleItems = () => setIsActive(!isActive)
+    const onItemClick = (newValue: string)=> {
+        props.onChange && props.onChange(newValue)
+        toggleItems()
+    }
+    const mappedItems = props.items.map(item =>
+        <div key={item.value}
+             className={stl.selectItem + " " + (selectedItem === item ? stl.selected : "")}
+             onClick={() => onItemClick(item.value)}
+        >
+            {item.title}
+        </div>
+    )
 
     return (
-        <select>
-            <option>{props.value}</option>
-        </select>
+        <div>
+            <div className={stl.select}>
+                <span className={stl.main} onClick={toggleItems}>{selectedItem && selectedItem.title}</span>
+                {
+                    isActive &&
+                    <div className={stl.selectedItems}>
+                        {mappedItems}
+                    </div>
+                }
+            </div>
+        </div>
     );
 };
