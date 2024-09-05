@@ -9,7 +9,7 @@ export const Select: FC<SelectProps> = (props) => {
     const selectedItem = props.items.find(item => item.value === props.value)
     const hoveredItem = props.items.find(item => item.value === hoveredElementValue)
 
-    useEffect(()=> {
+    useEffect(() => {
         setHoveredElementValue(props.value)
     }, [props.value])
 
@@ -28,10 +28,12 @@ export const Select: FC<SelectProps> = (props) => {
                         : props.items[i - 1]
                     if (pretenderElement) {
                         props.onChange && props.onChange(pretenderElement.value)
-                        break;
+                        return;
                     }
                 }
             }
+            if (!selectedItem)
+                props.onChange && props.onChange(props.items[0].value)
         }
         if (event.code === "Enter" || event.code === "Escape")
             setIsActive(false)
