@@ -1,4 +1,4 @@
-import {FC, useState} from "react";
+import {FC, useEffect, useState} from "react";
 import {SelectProps} from "common/types/Select/SelectProps.ts";
 import stl from "common/components/Select/select.module.css"
 
@@ -9,6 +9,10 @@ export const Select: FC<SelectProps> = (props) => {
     const selectedItem = props.items.find(item => item.value === props.value)
     const hoveredItem = props.items.find(item => item.value === hoveredElementValue)
 
+    useEffect(()=> {
+        setHoveredElementValue(props.value)
+    }, [props.value])
+
     const toggleItems = () => setIsActive(!isActive)
     const onItemClick = (newValue: string) => {
         props.onChange && props.onChange(newValue)
@@ -18,6 +22,10 @@ export const Select: FC<SelectProps> = (props) => {
     const onKeyUpHandler = (event: KeyboardEvent<HTMLDivElement>) => {
         for (let i = 0; i < props.items.length; i++) {
            if (props.items[i].value === hoveredElementValue) {
+               if (props.items[i + 1]) {
+                   props.onChange && props.onChange(props.items[i + 1].value)
+                   break;
+               }
                setHoveredElementValue(props.items[i + 1].value)
                break;
            }
