@@ -4,17 +4,23 @@ import stl from "common/components/Select/select.module.css"
 
 export const Select: FC<SelectProps> = (props) => {
     const [isActive, setIsActive] = useState<boolean>(false)
+    const [hoveredElementValue, setHoveredElementValue] = useState(props.value)
 
     const selectedItem = props.items.find(item => item.value === props.value)
+    const hoveredItem = props.items.find(item => item.value === hoveredElementValue)
+
     const toggleItems = () => setIsActive(!isActive)
     const onItemClick = (newValue: string)=> {
         props.onChange && props.onChange(newValue)
         toggleItems()
     }
+    const onMouseEnterHandler = (newValue: string) => setHoveredElementValue(newValue)
+
     const mappedItems = props.items.map(item =>
         <div key={item.value}
-             className={stl.selectItem + " " + (selectedItem === item ? stl.selected : "")}
+             className={stl.selectItem + " " + (hoveredItem === item ? stl.selected : "")}
              onClick={() => onItemClick(item.value)}
+             onMouseEnter={()=> onMouseEnterHandler(item.value)}
         >
             {item.title}
         </div>
