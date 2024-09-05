@@ -1,4 +1,4 @@
-import {FC, useEffect, useState} from "react";
+import {FC, useEffect, useState, KeyboardEvent} from "react";
 import {SelectProps} from "common/types/Select/SelectProps.ts";
 import stl from "common/components/Select/select.module.css"
 
@@ -20,15 +20,18 @@ export const Select: FC<SelectProps> = (props) => {
     }
     const onMouseEnterHandler = (newValue: string) => setHoveredElementValue(newValue)
     const onKeyUpHandler = (event: KeyboardEvent<HTMLDivElement>) => {
-        for (let i = 0; i < props.items.length; i++) {
-           if (props.items[i].value === hoveredElementValue) {
-               if (props.items[i + 1]) {
-                   props.onChange && props.onChange(props.items[i + 1].value)
-                   break;
-               }
-               setHoveredElementValue(props.items[i + 1].value)
-               break;
-           }
+        if (event.code === "ArrowDown" || event.code === "ArrowUp") {
+            for (let i = 0; i < props.items.length; i++) {
+                if (props.items[i].value === hoveredElementValue) {
+                    const pretenderElement = event.code === "ArrowDown"
+                        ? props.items[i + 1]
+                        : props.items[i - 1]
+                    if (pretenderElement) {
+                        props.onChange && props.onChange(pretenderElement.value)
+                        break;
+                    }
+                }
+            }
         }
     }
 
