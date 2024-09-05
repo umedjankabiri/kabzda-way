@@ -8,6 +8,9 @@ import {UncontrolledRating} from "common/components/UncontrolledRating/Uncontrol
 import {UncontrolledOnOff} from "common/components/UncontrolledOnOff/UncontrolledOnOff.tsx";
 import {useState} from "react";
 import {RatingValueProps} from "common/types/Rating/RatingValueProps.ts";
+import {
+    UncontrolledAccordionWithReducer
+} from "common/components/UncontrolledAccordionWithReducer/UncontrolledAccordionWithReducer.tsx";
 
 function App() {
     console.log("App rendering")
@@ -34,6 +37,7 @@ function App() {
             <UncontrolledAccordion title={"Menu"}/>
             <UncontrolledRating/>
             <UncontrolledOnOff/>
+            <UncontrolledAccordionWithReducer title={"Reducer Menu"}/>
         </div>
     )
 }
