@@ -10,17 +10,25 @@ export const Select: FC<SelectProps> = (props) => {
     const hoveredItem = props.items.find(item => item.value === hoveredElementValue)
 
     const toggleItems = () => setIsActive(!isActive)
-    const onItemClick = (newValue: string)=> {
+    const onItemClick = (newValue: string) => {
         props.onChange && props.onChange(newValue)
         toggleItems()
     }
     const onMouseEnterHandler = (newValue: string) => setHoveredElementValue(newValue)
+    const onKeyUpHandler = (event: KeyboardEvent<HTMLDivElement>) => {
+        for (let i = 0; i < props.items.length; i++) {
+           if (props.items[i].value === hoveredElementValue) {
+               setHoveredElementValue(props.items[i + 1].value)
+               break;
+           }
+        }
+    }
 
     const mappedItems = props.items.map(item =>
         <div key={item.value}
              className={stl.selectItem + " " + (hoveredItem === item ? stl.selected : "")}
              onClick={() => onItemClick(item.value)}
-             onMouseEnter={()=> onMouseEnterHandler(item.value)}
+             onMouseEnter={() => onMouseEnterHandler(item.value)}
         >
             {item.title}
         </div>
@@ -28,7 +36,7 @@ export const Select: FC<SelectProps> = (props) => {
 
     return (
         <div>
-            <div className={stl.select}>
+            <div className={stl.select} tabIndex={0} onKeyUp={onKeyUpHandler}>
                 <span className={stl.main} onClick={toggleItems}>{selectedItem && selectedItem.title}</span>
                 {
                     isActive &&
