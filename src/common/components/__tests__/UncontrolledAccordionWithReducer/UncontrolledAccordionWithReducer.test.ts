@@ -21,3 +21,11 @@ test("collapsed should be false", () => {
 
     expect(newState.collapsed).toBe(false)
 })
+test("UncontrolledAccordionReducer should return error", () => {
+    const state: InitialStateProps = {
+        collapsed: true
+    }
+    const action: ActionProps = {type: "FAKE-TYPE"};
+
+    expect(()=> UncontrolledAccordionReducer(state, action)).toThrow()
+})
