@@ -6,17 +6,17 @@ import {UncontrolledAccordionReducer} from "common/components/Reducers/Uncontrol
 
 export const UncontrolledAccordionWithReducer = (props: UncontrolledAccordionProps) => {
     console.log("UncontrolledAccordionWithReducer rendering")
-    const [collapsed, dispatch] = useReducer(UncontrolledAccordionReducer, false);
+    const [state, dispatch] = useReducer(UncontrolledAccordionReducer, {collapsed: false});
 
     return (
         <>
-            <AccordionTitle title={props.title} collapsed={!collapsed} onClick={
+            <AccordionTitle title={props.title} collapsed={!state.collapsed} onClick={
                 () => {
                     dispatch({type: "TOGGLE-COLLAPSED"})
                 }
             }
             />
-            {collapsed && <UncontrolledAccordionBody/>}
+            {state.collapsed && <UncontrolledAccordionBody/>}
         </>
     );
 };
