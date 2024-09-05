@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {AccordionTitle} from "common/components/Accordion/AccordionTitle/AccordionTitle.tsx";
-import {AccordionBody} from "common/components/Accordion/AccordionBody/AccordionBody.tsx";
 import {UncontrolledAccordionProps} from "common/types/UncontrolledAccordion/UncontrolledAccordionProps.ts";
+import {UncontrolledAccordionBody} from "common/components/UncontrolledAccordionBody/UncontrolledAccordionBody.tsx";
 
 export const UncontrolledAccordion = (props: UncontrolledAccordionProps) => {
     console.log("UncontrolledAccordion rendering")
@@ -10,7 +10,7 @@ export const UncontrolledAccordion = (props: UncontrolledAccordionProps) => {
     return (
         <>
             <AccordionTitle title = {props.title} collapsed={!collapsed} onClick={setCollapsed}/>
-            { collapsed && <AccordionBody/>}
+            { collapsed && <UncontrolledAccordionBody/>}
         </>
     );
 };
