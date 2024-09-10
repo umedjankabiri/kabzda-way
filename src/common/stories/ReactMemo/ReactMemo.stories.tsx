@@ -5,7 +5,7 @@ import {
 } from "common/stories/ReactMemo/UsersMemoDemonstration.tsx";
 
 export default {
-    title: 'ReactMemo',
+    title: 'ReactMemo stories',
 }
 
 export const ReactMemoDemonstration = () => {
