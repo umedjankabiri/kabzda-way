@@ -1,6 +1,6 @@
 import {memo, useCallback, useMemo, useState} from "react";
 import {MessagesCounterMemoDemonstration} from "common/stories/ReactMemo/CounterMemoDemonstration.tsx";
-import {BooksWithUseCallbackDemonstration} from "common/components/useCallBack/BooksWithUseCallbackDemonstration.tsx";
+import {BooksWithUseCallbackDemonstration} from "common/stories/useCallBack/BooksWithUseCallbackDemonstration.tsx";
 
 export default {
     title: 'useCallback',
