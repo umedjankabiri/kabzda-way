@@ -9,13 +9,14 @@ export const SetIntervalDemonstration = () => {
     const [counter, setCounter] = useState(1);
 
     useEffect(() => {
+        console.log("useEffect")
         const intervalID = setInterval(() => {
             console.log("tick: " + counter);
             setCounter(prevState => prevState + 1);
         }, 1000)
 
         return () => clearInterval(intervalID)
-    }, [counter])
+    }, [])
 
     return (
         <div>
