@@ -15,11 +15,9 @@ export const UseStateDemonstration = () => {
     console.log("useState Demonstration")
     const [counter, setCounter] = useState(generateData);
 
-    const changer = (state: number) => state + 1
-
     return (
         <div>
-            <button onClick={() => setCounter(changer)}>+</button>
+            <button onClick={() => setCounter(prevState => prevState + 1)}>+</button>
             <UseStateCounterDemonstration counter={counter}/>
         </div>
     )
