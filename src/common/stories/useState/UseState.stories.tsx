@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useMemo, useState} from "react";
 import {UseStateCounterDemonstration} from "common/stories/useState/UseStateCounterDemonstration.tsx";
 
 export default {
@@ -10,9 +10,9 @@ function generateData() {
     return 3284982732;
 }
 
-export const useStateDemonstration = () => {
+export const UseStateDemonstration = () => {
     console.log("useState Demonstration")
-    const initialValue = generateData();
+    const initialValue = useMemo(generateData, []);
     const [counter, setCounter] = useState(initialValue);
 
     return (
