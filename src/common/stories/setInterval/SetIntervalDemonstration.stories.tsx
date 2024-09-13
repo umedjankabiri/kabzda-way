@@ -6,7 +6,6 @@ export default {
 
 export const SetIntervalDemonstration = () => {
     console.log("setInterval Demonstration")
-    const [fake, setFake] = useState(1);
     const [counter, setCounter] = useState(1);
 
     useEffect(() => {
@@ -18,12 +17,7 @@ export const SetIntervalDemonstration = () => {
 
     return (
         <div>
-            <div>
-                fake: {fake}
-            </div>
-            <div>
-                counter: {counter}
-            </div>
+            counter: {counter}
         </div>
     )
 }
