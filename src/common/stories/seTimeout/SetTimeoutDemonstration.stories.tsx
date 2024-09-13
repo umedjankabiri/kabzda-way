@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 export default {
     title: 'setTimeout stories',
@@ -9,10 +9,12 @@ export const SetTimeDemonstration = () => {
     const [fake, setFake] = useState(1);
     const [counter, setCounter] = useState(1);
 
-    setTimeout(() => {
-        console.log("setTimeout")
-        document.title = counter.toString();
-    }, 1000)
+    useEffect(() => {
+        setTimeout(() => {
+            console.log("setTimeout")
+            document.title = counter.toString();
+        }, 1000)
+    }, [counter])
 
     return (
         <div>
