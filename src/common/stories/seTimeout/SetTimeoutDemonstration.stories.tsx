@@ -18,11 +18,13 @@ export const SetTimeDemonstration = () => {
 
     return (
         <div>
-            <div>fake:
+            <div>
+                fake:
                 <button onClick={() => setFake(fake + 1)}>fake +</button>
                 {fake}
             </div>
-            <div>counter:
+            <div>
+                counter:
                 <button onClick={() => setCounter(counter + 1)}>counter +</button>
                 {counter}
             </div>
