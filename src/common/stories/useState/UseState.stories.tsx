@@ -1,4 +1,4 @@
-import {useMemo, useState} from "react";
+import {useState} from "react";
 import {UseStateCounterDemonstration} from "common/stories/useState/UseStateCounterDemonstration.tsx";
 
 export default {
@@ -6,18 +6,20 @@ export default {
 }
 
 function generateData() {
+    // difficult counting
     console.log("generateData")
-    return 3284982732;
+    return 1;
 }
 
 export const UseStateDemonstration = () => {
     console.log("useState Demonstration")
-    const initialValue = useMemo(generateData, []);
-    const [counter, setCounter] = useState(initialValue);
+    const [counter, setCounter] = useState(generateData);
+
+    const changer = (state: number) => state + 1
 
     return (
         <div>
-            <button onClick={() => setCounter(counter + 1)}>+</button>
+            <button onClick={() => setCounter(changer)}>+</button>
             <UseStateCounterDemonstration counter={counter}/>
         </div>
     )
