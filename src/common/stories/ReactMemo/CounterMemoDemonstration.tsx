@@ -1,4 +1,3 @@
-
 export const MessagesCounterMemoDemonstration = (props: {counter: number})=> {
     console.log("Messages counter memo demonstration");
 
