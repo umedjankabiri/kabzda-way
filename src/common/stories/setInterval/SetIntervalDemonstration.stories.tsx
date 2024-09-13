@@ -15,7 +15,7 @@ export const SetIntervalDemonstration = () => {
         }, 1000)
 
         return () => clearInterval(intervalID)
-    }, [])
+    }, [counter])
 
     return (
         <div>
