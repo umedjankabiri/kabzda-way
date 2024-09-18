@@ -1,5 +1,6 @@
 import {FC, useEffect, useState} from "react";
 import {ClockProps} from "common/types/OnOff/ClockProps.ts";
+import {putZeroFirst} from "common/utils/putZeroFirst.ts";
 
 export const Clock: FC<ClockProps> = (props) => {
     const [date, setDate] = useState(new Date())
@@ -11,19 +12,13 @@ export const Clock: FC<ClockProps> = (props) => {
         return () => clearInterval(timerID);
     }, []);
 
-    const putZeroFirst = (number: number) => number < 10 ? ("0" + number) : number
-
-    const hours = putZeroFirst(date.getHours())
-    const minutes = putZeroFirst(date.getMinutes())
-    const seconds = putZeroFirst(date.getSeconds())
-
     return (
         <div>
-            <span>{hours}</span>
+            <span>{putZeroFirst(date.getHours())}</span>
             :
-            <span>{minutes}</span>
+            <span>{putZeroFirst(date.getMinutes())}</span>
             :
-            <span>{seconds}</span>
+            <span>{putZeroFirst(date.getSeconds())}</span>
         </div>
     )
 }
