@@ -2,9 +2,9 @@ import {FC, useEffect, useState} from "react";
 import {ClockProps} from "common/types/OnOff/ClockProps.ts";
 import {putZeroFirst} from "common/utils/putZeroFirst.ts";
 
-export const Clock: FC<ClockProps> = (props) => {
-    const [date, setDate] = useState(new Date())
+export const Clock: FC<ClockProps> = () => {
 
+    const [date, setDate] = useState(new Date())
     useEffect(() => {
         const timerID = setInterval(() => {
             setDate(new Date());
