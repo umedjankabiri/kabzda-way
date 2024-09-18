@@ -11,9 +11,11 @@ export const Clock: FC<ClockProps> = (props) => {
         return () => clearInterval(timerID);
     }, []);
 
-    const hours = date.getHours() < 10 ? '0' + date.getHours() : date.getHours()
-    const minutes = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()
-    const seconds = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds()
+    const putZeroFirst = (number: number) => number < 10 ? ("0" + number) : number
+
+    const hours = putZeroFirst(date.getHours())
+    const minutes = putZeroFirst(date.getMinutes())
+    const seconds = putZeroFirst(date.getSeconds())
 
     return (
         <div>
