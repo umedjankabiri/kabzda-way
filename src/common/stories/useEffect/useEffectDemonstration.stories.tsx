@@ -66,14 +66,14 @@ export const KeysTracker = () => {
     useEffect(() => {
         const handler = (event: KeyboardEvent) => {
             console.log(event.key)
-            setText(prevState => prevState + event.key)
+            setText(text + event.key)
         }
         window.addEventListener("keypress", handler)
 
         return () => {
             window.removeEventListener("keypress", handler)
         }
-    }, [])
+    }, [text])
 
     return (
         <>
