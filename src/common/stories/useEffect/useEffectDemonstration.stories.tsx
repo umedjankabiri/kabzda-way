@@ -37,3 +37,47 @@ export const UseEffectDemonstration = () => {
         </div>
     )
 }
+
+export const ResetUseEffectDemonstration = () => {
+    console.log("Component ResetUseEffectDemonstration rendered")
+    const [counter, setCounter] = useState(1);
+
+    useEffect(() => {
+        console.log("useEffect occurred: " + counter + " actual counter");
+
+        return () => {
+            console.log("Reset useEffect: " + counter + " old counter");
+        }
+    }, [counter])
+
+    const increase = () => setCounter(counter + 1)
+
+    return (
+        <>
+            <button onClick={increase}>+</button>
+            counter: {counter}
+        </>
+    )
+}
+export const KeysTracker = () => {
+    console.log("Component KeysTracker rendered")
+    const [text, setText] = useState("");
+
+    useEffect(() => {
+        const handler = (event: KeyboardEvent) => {
+            console.log(event.key)
+            setText(prevState => prevState + event.key)
+        }
+        window.addEventListener("keypress", handler)
+
+        return () => {
+            window.removeEventListener("keypress", handler)
+        }
+    }, [])
+
+    return (
+        <>
+            <span>Typed text: {text}</span>
+        </>
+    )
+}
