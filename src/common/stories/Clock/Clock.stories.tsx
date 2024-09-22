@@ -5,8 +5,13 @@ export default {
     component: Clock
 }
 
-export const ClockDemonstration = () => {
+export const DigitalClockDemonstration = () => {
     return (
-        <Clock />
+        <Clock watchMode={"digital"}/>
+    )
+}
+export const AnalogClockDemonstration = () => {
+    return (
+        <Clock watchMode={"analog"}/>
     )
 }
