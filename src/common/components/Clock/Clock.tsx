@@ -10,6 +10,7 @@ export const Clock: FC<ClockProps> = ({watchMode}) => {
         const timerID = setInterval(() => {
             setDate(new Date());
         }, 1000);
+
         return () => clearInterval(timerID);
     }, []);
 
