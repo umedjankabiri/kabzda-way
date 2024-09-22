@@ -59,7 +59,8 @@ export const ResetUseEffectDemonstration = () => {
         </>
     )
 }
-export const KeysTracker = () => {
+
+export const KeysTrackerDemonstration = () => {
     console.log("Component KeysTracker rendered")
     const [text, setText] = useState("");
 
@@ -78,6 +79,29 @@ export const KeysTracker = () => {
     return (
         <>
             <span>Typed text: {text}</span>
+        </>
+    )
+}
+
+export const SetTimeoutDemonstration = () => {
+    console.log("Component SetTimeoutDemonstration rendered")
+    const [text, setText] = useState("");
+
+    useEffect(() => {
+        const timeoutID = setTimeout(()=> {
+            console.log("Timeout expired")
+            setText("3 seconds passed")
+        }, 3000)
+
+        return () => {
+            console.log("Reset useEffect:  clearing setTimeout demonstration");
+            clearTimeout(timeoutID)
+        }
+    }, [text])
+
+    return (
+        <>
+            <span>waiting for setTimeout: {text}</span>
         </>
     )
 }
