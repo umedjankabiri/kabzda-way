@@ -4,7 +4,7 @@ export default {
     title: 'setTimeout stories',
 }
 
-export const SetTimeDemonstration = () => {
+export const SetTimeoutDemonstration = () => {
     console.log("setTimeout Demonstration")
     const [fake, setFake] = useState(1);
     const [counter, setCounter] = useState(1);
