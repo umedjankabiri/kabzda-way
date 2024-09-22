@@ -1,10 +1,11 @@
 import {FC, useEffect, useState} from "react";
-import {ClockProps} from "common/types/OnOff/ClockProps.ts";
-import {putZeroFirst} from "common/utils/putZeroFirst.ts";
+import {ClockProps} from "common/types/Clock/ClockProps.ts";
+import {DigitalClockView} from "common/components/Clock/DigitalClockView/DigitalClockView.tsx";
+import {AnalogClockView} from "common/components/Clock/AnalogClockView/AnalogClockView.tsx";
 
-export const Clock: FC<ClockProps> = () => {
-
+export const Clock: FC<ClockProps> = ({watchMode}) => {
     const [date, setDate] = useState(new Date())
+
     useEffect(() => {
         const timerID = setInterval(() => {
             setDate(new Date());
@@ -12,13 +13,22 @@ export const Clock: FC<ClockProps> = () => {
         return () => clearInterval(timerID);
     }, []);
 
+    let view;
+
+    switch (watchMode) {
+        case "analog":
+            view = <AnalogClockView date={date}/>
+            break;
+        case "digital":
+        default:
+            view = <DigitalClockView date={date}/>
+    }
+
     return (
         <div>
-            <span>{putZeroFirst(date.getHours())}</span>
-            :
-            <span>{putZeroFirst(date.getMinutes())}</span>
-            :
-            <span>{putZeroFirst(date.getSeconds())}</span>
+            {
+                view
+            }
         </div>
     )
 }
